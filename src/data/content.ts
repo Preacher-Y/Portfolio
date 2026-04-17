@@ -96,7 +96,8 @@ export const projects = [
     impact: "Enabled hundreds of mentorship connections across continents with structured guidance workflows.",
     github: "https://github.com/Preacher-Y/global-roots",
     live: "https://globalroots.netlify.app",
-    icon: "globe"
+    icon: "globe",
+    images: ["/projects/globalroots-1.png"]
   },
   {
     id: 2,
@@ -115,7 +116,8 @@ export const projects = [
     impact: "Provided a secure, compliant platform for mental health professionals to conduct remote sessions.",
     github: "https://github.com/Preacher-Y/safemind",
     live: null,
-    icon: "shield"
+    icon: "shield",
+    images: ["/projects/safemind-1.png", "/projects/safemind-2.png"]
   },
   {
     id: 3,
@@ -134,7 +136,8 @@ export const projects = [
     impact: "Reduced receipt processing time by 80% through automated extraction and validation.",
     github: "https://github.com/Preacher-Y/requenta",
     live: "https://requenta.netlify.app",
-    icon: "document"
+    icon: "document",
+    images: ["/projects/requenta-1.png"]
   }
 ];
 

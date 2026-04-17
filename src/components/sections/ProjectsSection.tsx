@@ -2,6 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { projects, personalInfo } from "@/data/content";
 
 interface Project {
@@ -16,6 +17,7 @@ interface Project {
   github: string;
   live: string | null;
   icon: string;
+  images: string[];
 }
 
 function ProjectIcon({ icon }: { icon: string }) {
@@ -53,7 +55,7 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: () => vo
       onClick={onClick}
       className="group cursor-pointer"
     >
-      <div className="relative border border-[#1f1f1c] p-6 transition-all duration-300 hover:border-[#c9a962]/30">
+      <div className="relative border border-[#1f1f1c] p-5 transition-all duration-300 hover:border-[#c9a962]/30">
         <div className="flex items-start justify-between mb-4">
           <div className="w-10 h-10 border border-[#c9a962]/30 flex items-center justify-center text-[#c9a962]">
             <ProjectIcon icon={project.icon} />
@@ -112,12 +114,12 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
         animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
         exit={{ opacity: 0, y: 20, scale: 0.98 }}
         transition={{ duration: 0.3 }}
-        className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto bg-[#111110] border border-[#1f1f1c] p-6 sm:p-8"
+        className="relative w-full max-w-3xl max-h-[85vh] overflow-y-auto bg-[#111110] border border-[#1f1f1c] p-6 sm:p-8"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 text-[#78716c] hover:text-[#faf9f7] transition-colors"
+          className="absolute top-4 right-4 p-2 text-[#78716c] hover:text-[#faf9f7] transition-colors z-10"
         >
           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
             <line x1="18" y1="6" x2="6" y2="18" />
@@ -135,6 +137,24 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
             </h2>
             <p className="text-[#a8a29e]">{project.summary}</p>
           </div>
+
+          {project.images && project.images.length > 0 && (
+            <div className="border border-[#1f1f1c] p-4">
+              <h3 className="text-xs uppercase tracking-[0.2em] text-[#c9a962] mb-4">Preview</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {project.images.map((img, idx) => (
+                  <div key={idx} className="relative aspect-video bg-[#1f1f1c] border border-[#1f1f1c] overflow-hidden">
+                    <Image
+                      src={img}
+                      alt={`${project.title} screenshot ${idx + 1}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div className="grid sm:grid-cols-2 gap-4">
             <div className="border border-[#1f1f1c] p-4">
@@ -246,8 +266,8 @@ export function ProjectsSection() {
           {projects.map((project) => (
             <ProjectCard
               key={project.id}
-              project={project}
-              onClick={() => setSelectedProject(project)}
+              project={project as Project}
+              onClick={() => setSelectedProject(project as Project)}
             />
           ))}
         </div>

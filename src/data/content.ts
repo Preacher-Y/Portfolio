@@ -3,7 +3,7 @@ export const personalInfo = {
   title: "Software Engineer",
   tagline: "I build scalable backend systems, intelligent data pipelines, and production-ready web platforms.",
   shortIntro: "Software engineer focused on backend architecture, API integrations, analytics-ready systems, and modern full-stack development.",
-  email: "yves@sheja.dev",
+  email: "ysheja@gmail.com",
   github: "https://www.github.com/Preacher-Y",
   linkedin: "https://www.linkedin.com/in/yves-sheja-n-m/",
   location: "Kigali, Rwanda",

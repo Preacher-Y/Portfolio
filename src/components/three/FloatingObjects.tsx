@@ -4,6 +4,14 @@ import { useRef, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
+// Seeded PRNG for deterministic random values
+function createSeededRandom(seed: number) {
+  return function() {
+    seed = (seed * 1103515245 + 12345) & 0x7fffffff;
+    return seed / 0x7fffffff;
+  };
+}
+
 interface FloatingElementProps {
   position: [number, number, number];
   geometry: "torus" | "octahedron" | "icosahedron";
@@ -65,6 +73,7 @@ function FloatingElement({
 
 export function ElegantFloatingObjects() {
   const objects = useMemo(() => {
+    const random = createSeededRandom(54321);
     const items = [];
     const geometries = ["torus", "octahedron", "icosahedron"] as const;
 
@@ -85,10 +94,10 @@ export function ElegantFloatingObjects() {
         id: i,
         position: [p.x, p.y, p.z] as [number, number, number],
         geometry: geometries[i % geometries.length],
-        size: 0.15 + Math.random() * 0.25,
-        rotationSpeed: 0.2 + Math.random() * 0.3,
-        floatSpeed: 0.3 + Math.random() * 0.3,
-        floatOffset: Math.random() * Math.PI * 2,
+        size: 0.15 + random() * 0.25,
+        rotationSpeed: 0.2 + random() * 0.3,
+        floatSpeed: 0.3 + random() * 0.3,
+        floatOffset: random() * Math.PI * 2,
       });
     }
     return items;

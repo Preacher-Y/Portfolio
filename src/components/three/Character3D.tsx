@@ -4,6 +4,14 @@ import { useRef, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
+// Seeded PRNG for deterministic random values
+function createSeededRandom(seed: number) {
+  return function() {
+    seed = (seed * 1103515245 + 12345) & 0x7fffffff;
+    return seed / 0x7fffffff;
+  };
+}
+
 interface ElegantCharacterProps {
   mousePosition: { x: number; y: number };
 }
@@ -54,26 +62,13 @@ export function ElegantCharacter({ mousePosition }: ElegantCharacterProps) {
     }
   });
 
-  const goldMaterial = useMemo(() => new THREE.MeshStandardMaterial({
-    color: "#c9a962",
-    metalness: 0.9,
-    roughness: 0.2,
-    emissive: "#c9a962",
-    emissiveIntensity: 0.1,
-  }), []);
-
-  const darkMaterial = useMemo(() => new THREE.MeshStandardMaterial({
-    color: "#141412",
-    metalness: 0.8,
-    roughness: 0.3,
-  }), []);
-
   const particlePositions = useMemo(() => {
+    const random = createSeededRandom(12345);
     const positions = new Float32Array(100 * 3);
     for (let i = 0; i < 100; i++) {
-      const theta = Math.random() * Math.PI * 2;
-      const phi = Math.acos(2 * Math.random() - 1);
-      const radius = 1.5 + Math.random() * 1;
+      const theta = random() * Math.PI * 2;
+      const phi = Math.acos(2 * random() - 1);
+      const radius = 1.5 + random() * 1;
       positions[i * 3] = radius * Math.sin(phi) * Math.cos(theta);
       positions[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
       positions[i * 3 + 2] = radius * Math.cos(phi);

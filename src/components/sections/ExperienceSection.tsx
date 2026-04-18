@@ -52,7 +52,7 @@ export function ExperienceSection() {
 
                 <div className={`flex items-start gap-8 ${isLeft ? "" : "flex-row-reverse"}`}>
                   <div className="flex-1">
-                    <div className={`${isLeft ? "text-right" : "text-left"}`}>
+                    <div className="text-left">
                       <div className="inline-block luxury-border p-6">
                         <div className="mb-3">
                           <span className="inline-block px-3 py-1 text-xs text-[#78716c] border border-[#1f1f1c] mb-3">
@@ -65,10 +65,10 @@ export function ExperienceSection() {
                         <p className="text-sm text-[#c9a962] mb-4">{item.company}</p>
                         <ul className="space-y-2">
                           {item.highlights.map((highlight, i) => (
-                            <li key={i} className={`flex items-start gap-2 text-sm text-[#a8a29e] ${isLeft ? "justify-end" : "justify-start"}`}>
+                            <li key={i} className={`flex items-start gap-2 text-sm text-[#a8a29e] justify-start`}>
                               {isLeft && <span className="mt-1.5 w-1 h-1 rounded-full bg-[#c9a962] flex-shrink-0" />}
-                              <span>{highlight}</span>
                               {!isLeft && <span className="mt-1.5 w-1 h-1 rounded-full bg-[#c9a962] flex-shrink-0" />}
+                              <span>{highlight}</span>
                             </li>
                           ))}
                         </ul>

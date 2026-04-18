@@ -7,14 +7,12 @@ import { personalInfo, heroWords } from "@/data/content";
 export function HeroSection() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
-  const [isTyping, setIsTyping] = useState(true);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
     const word = heroWords[currentWordIndex];
     let charIndex = 0;
-    setIsTyping(true);
 
     const typeInterval = setInterval(() => {
       if (charIndex <= word.length) {
@@ -22,9 +20,7 @@ export function HeroSection() {
         charIndex++;
       } else {
         clearInterval(typeInterval);
-        setIsTyping(false);
         setTimeout(() => {
-          setIsTyping(true);
           setCurrentWordIndex((prev) => (prev + 1) % heroWords.length);
         }, 2500);
       }

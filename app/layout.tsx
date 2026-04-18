@@ -27,6 +27,9 @@ export const metadata: Metadata = {
   description: "Software engineer focused on backend architecture, API integrations, analytics-ready systems, and modern full-stack development. Building scalable systems that ship.",
   keywords: ["Software Engineer", "Backend Developer", "Full Stack", "React", "Node.js", "Kigali"],
   authors: [{ name: "Yves Sheja N M" }],
+  icons:{
+    icon:"/icon.png",
+  },
   openGraph: {
     title: "Yves Sheja N M | Software Engineer",
     description: "Building scalable backend systems, intelligent data pipelines, and production-ready web platforms.",

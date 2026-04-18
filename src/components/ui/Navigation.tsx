@@ -61,8 +61,8 @@ export function Navigation() {
               className="text-sm tracking-widest"
               whileHover={{ scale: 1.02 }}
             >
-              <span className="text-[#c9a962]">Y</span>
-              <span className="text-[#faf9f7]">SM</span>
+              <span className="text-[#c9a962]">YS</span>
+              <span className="text-[#faf9f7]">NM</span>
             </motion.a>
 
             <div className="hidden md:flex items-center gap-8">

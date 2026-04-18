@@ -80,17 +80,19 @@ export function HeroSection() {
             </h1>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="flex items-center justify-center gap-4">
-            <span className="text-base sm:text-lg text-[#78716c]">
-              I build
-            </span>
-            <span
-              className="text-base sm:text-lg text-[#c9a962] font-light min-w-[200px] text-left"
-              style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontStyle: "italic" }}
-            >
-              {displayedText}
-              <span className="inline-block w-px h-5 ml-1 bg-[#c9a962] animate-blink" />
-            </span>
+          <motion.div variants={itemVariants} className="flex items-center justify-center text-center">
+            <div className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 text-center">
+              <span className="text-base sm:text-lg text-[#78716c]">
+                I build
+              </span>
+              <span
+                className="text-base sm:text-lg text-[#c9a962] font-light"
+                style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontStyle: "italic" }}
+              >
+                {displayedText}
+                <span className="inline-block w-px h-5 ml-1 bg-[#c9a962] animate-blink" />
+              </span>
+            </div>
           </motion.div>
 
           <motion.p

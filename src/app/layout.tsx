@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   keywords: ["Software Engineer", "Backend Developer", "Full-Stack Developer", "React", "Node.js", "API Design", "Kigali", "Rwanda"],
   authors: [{ name: "Yves Sheja N M" }],
   creator: "Yves Sheja N M",
+  icons: {
+    icon: "/port-ic-removebg-preview.png",
+    shortcut: "/port-ic-removebg-preview.png",
+    apple: "/port-ic-removebg-preview.png",
+  },
   openGraph: {
     title: "Yves Sheja N M | Software Engineer",
     description: "Software engineer focused on backend architecture, API integrations, and modern full-stack development.",
@@ -42,9 +47,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-      </head>
       <body className={`${inter.variable} ${jetbrainsMono.variable} min-h-full flex flex-col antialiased`}>
         {children}
       </body>

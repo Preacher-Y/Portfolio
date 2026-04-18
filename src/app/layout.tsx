@@ -57,6 +57,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <link rel="shortcut icon" href="icon.png" type="image/png" />
+      </head>
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} min-h-full flex flex-col antialiased`}
       >

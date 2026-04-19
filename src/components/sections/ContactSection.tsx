@@ -63,7 +63,16 @@ export function ContactSection() {
     setSubmitStatus("idle");
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send");
+      }
+
       setSubmitStatus("success");
       setFormData({ name: "", email: "", message: "" });
     } catch {

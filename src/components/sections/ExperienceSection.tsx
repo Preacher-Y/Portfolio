@@ -66,8 +66,8 @@ export function ExperienceSection() {
                         <ul className="space-y-2">
                           {item.highlights.map((highlight, i) => (
                             <li key={i} className={`flex items-start gap-2 text-sm text-[#a8a29e] justify-start`}>
-                              {isLeft && <span className="mt-1.5 w-1 h-1 rounded-full bg-[#c9a962] flex-shrink-0" />}
-                              {!isLeft && <span className="mt-1.5 w-1 h-1 rounded-full bg-[#c9a962] flex-shrink-0" />}
+                              {isLeft && <span className="mt-1.5 w-1 h-1 rounded-full bg-[#c9a962] shrink-0" />}
+                              {!isLeft && <span className="mt-1.5 w-1 h-1 rounded-full bg-[#c9a962] shrink-0" />}
                               <span>{highlight}</span>
                             </li>
                           ))}
@@ -76,7 +76,7 @@ export function ExperienceSection() {
                     </div>
                   </div>
 
-                  <div className="flex-shrink-0 w-4" />
+                  <div className="shrink-0 w-4" />
 
                   <div className="flex-1" />
                 </div>

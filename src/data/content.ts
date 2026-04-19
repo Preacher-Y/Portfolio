@@ -82,7 +82,7 @@ export const projects = [
   {
     id: 1,
     title: "Global Roots",
-    summary: "A mentorship platform connecting diaspora professionals with Rwandan youth",
+    summary: "A mentorship platform connecting diaspora professionals with Rwandan youth to give back to the community",
     problem: "Organizations struggle to connect experienced professionals abroad with youth who need mentorship and career guidance.",
     solution: "Built a role-based platform with progress tracking, performance metrics, and scalable interface boundaries for different user types.",
     techStack: ["React", "TypeScript", "Tailwind CSS", "Recharts"],
@@ -122,8 +122,8 @@ export const projects = [
   {
     id: 3,
     title: "Requenta",
-    summary: "An intelligent receipt management system with OCR extraction, validation, and export",
-    problem: "Manual receipt processing is time-consuming, error-prone, and difficult to scale for organizations with high transaction volumes.",
+    summary: "An intelligent reimbursement management system with OCR extraction, validation, and export",
+    problem: "Manual reimbursement processing is time-consuming, error-prone, and difficult to scale for organizations with high transaction volumes.",
     solution: "Created an ETL-style ingestion workflow with OpenAI-powered OCR extraction, data validation, and Excel export capabilities.",
     techStack: ["React", "Tailwind CSS", "JavaScript", "Node.js", "Supabase", "Email.js", "OpenAI"],
     highlights: [
@@ -133,7 +133,7 @@ export const projects = [
       "Data validation rules engine",
       "Excel export workflow"
     ],
-    impact: "Reduced receipt processing time by 80% through automated extraction and validation.",
+    impact: "Reduced reimbursement processing time by 80% through automated extraction and validation.",
     github: "https://github.com/Preacher-Y/requenta",
     live: "https://requenta.netlify.app",
     icon: "document",

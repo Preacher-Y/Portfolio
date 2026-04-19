@@ -141,14 +141,18 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           {project.images && project.images.length > 0 && (
             <div className="border border-[#1f1f1c] p-4">
               <h3 className="text-xs uppercase tracking-[0.2em] text-[#c9a962] mb-4">Preview</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4">
                 {project.images.map((img, idx) => (
-                  <div key={idx} className="relative aspect-video bg-[#1f1f1c] border border-[#1f1f1c] overflow-hidden">
+                  <div
+                    key={idx}
+                    className="relative h-[320px] sm:h-[420px] bg-[#0a0a09] border border-[#1f1f1c] overflow-hidden"
+                  >
                     <Image
                       src={img}
                       alt={`${project.title} screenshot ${idx + 1}`}
                       fill
-                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      className="object-contain p-2"
                     />
                   </div>
                 ))}
@@ -279,7 +283,7 @@ export function ProjectsSection() {
           className="mt-16 text-center"
         >
           <a
-            href={personalInfo.github}
+            href={personalInfo.github+"?tab=repositories"}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-6 py-3 text-sm uppercase tracking-wider border border-[#1f1f1c] text-[#a8a29e] hover:border-[#c9a962]/50 hover:text-[#c9a962] transition-all"

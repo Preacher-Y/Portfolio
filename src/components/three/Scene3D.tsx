@@ -55,7 +55,7 @@ function SceneContent({ mousePosition }: { mousePosition: { x: number; y: number
 
 export function Scene3D({ mousePosition, scrollProgress }: Scene3DProps) {
   return (
-    <div className="fixed inset-0 -z-10" style={{ opacity: 0.7 }}>
+    <div className="pointer-events-none fixed inset-0 z-0" style={{ opacity: 0.7 }}>
       <Canvas
         camera={{ position: [0, 0, 10], fov: 45 }}
         gl={{

@@ -52,7 +52,7 @@ export function SkillsSection() {
 
   return (
     <section id="skills" ref={ref} className="relative py-32 md:py-40 overflow-hidden">
-      <div className="absolute inset-0 bg-[#0a0a09]" />
+      <div className="absolute inset-0 bg-[rgba(10,10,9,0.72)]" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8">
         <motion.div

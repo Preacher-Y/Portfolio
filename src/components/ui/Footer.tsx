@@ -5,8 +5,8 @@ import { personalInfo } from "@/data/content";
 
 export function Footer() {
   return (
-    <footer className="relative py-16 border-t border-[#1f1f1c]">
-      <div className="absolute inset-0 bg-[#0a0a09]" />
+    <footer className="relative z-10 py-16 border-t border-[#1f1f1c]">
+      <div className="absolute inset-0 bg-[rgba(10,10,9,0.78)]" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">

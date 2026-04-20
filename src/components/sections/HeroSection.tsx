@@ -55,7 +55,7 @@ export function HeroSection() {
       ref={ref}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      <div className="absolute inset-0 bg-[#0a0a09]" />
+      <div className="absolute inset-0 bg-[rgba(10,10,9,0.58)]" />
 
       <div className="relative z-20 text-center max-w-4xl mx-auto px-6 sm:px-8">
         <motion.div

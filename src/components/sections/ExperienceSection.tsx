@@ -36,7 +36,7 @@ export function ExperienceSection() {
         </motion.div>
 
         <div className="relative">
-          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[#1f1f1c] -translate-x-1/2" />
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-[#1f1f1c] md:-translate-x-1/2" />
 
           {experience.map((item, index) => {
             const isLeft = index % 2 === 0;
@@ -46,16 +46,16 @@ export function ExperienceSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
-                className="relative mb-12 last:mb-0"
+                className="relative mb-12 last:mb-0 pl-12 md:pl-0"
               >
-                <div className="absolute left-1/2 top-8 w-2 h-2 bg-[#c9a962] -translate-x-1/2 rounded-full" />
+                <div className="absolute left-4 md:left-1/2 top-8 w-2 h-2 bg-[#c9a962] -translate-x-1/2 rounded-full" />
 
-                <div className={`flex items-start gap-8 ${isLeft ? "" : "flex-row-reverse"}`}>
+                <div className={`flex items-start gap-8 ${isLeft ? "" : "md:flex-row-reverse"}`}>
                   <div className="flex-1">
                     <div className="text-left">
-                      <div className="inline-block luxury-border p-6">
+                      <div className="inline-block luxury-border bg-[#111110]/60 backdrop-blur-sm p-6">
                         <div className="mb-3">
-                          <span className="inline-block px-3 py-1 text-xs text-[#78716c] border border-[#1f1f1c] mb-3">
+                          <span className="inline-block px-3 py-1 text-xs text-[#78716c] border border-[#c9a962]/10 bg-[#111110]/40 backdrop-blur-sm mb-3">
                             {item.period}
                           </span>
                         </div>
@@ -76,9 +76,9 @@ export function ExperienceSection() {
                     </div>
                   </div>
 
-                  <div className="shrink-0 w-4" />
+                  <div className="shrink-0 w-4 hidden md:block" />
 
-                  <div className="flex-1" />
+                  <div className="flex-1 hidden md:block" />
                 </div>
               </motion.div>
             );

@@ -55,7 +55,7 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: () => vo
       onClick={onClick}
       className="group cursor-pointer"
     >
-      <div className="relative border border-[#1f1f1c] p-5 transition-all duration-300 hover:border-[#c9a962]/30">
+      <div className="relative border border-[#c9a962]/10 bg-[#111110]/60 backdrop-blur-sm p-5 transition-all duration-300 hover:border-[#c9a962]/30 hover:bg-[#111110]/80">
         <div className="flex items-start justify-between mb-4">
           <div className="w-10 h-10 border border-[#c9a962]/30 flex items-center justify-center text-[#c9a962]">
             <ProjectIcon icon={project.icon} />
@@ -114,7 +114,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
         animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
         exit={{ opacity: 0, y: 20, scale: 0.98 }}
         transition={{ duration: 0.3 }}
-        className="relative w-full max-w-3xl max-h-[85vh] overflow-y-auto bg-[#111110] border border-[#1f1f1c] p-6 sm:p-8"
+        className="relative w-full max-w-3xl max-h-[85vh] overflow-y-auto bg-[#111110]/80 backdrop-blur-sm border border-[#c9a962]/10 p-6 sm:p-8"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -161,17 +161,17 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           )}
 
           <div className="grid sm:grid-cols-2 gap-4">
-            <div className="border border-[#1f1f1c] p-4">
+            <div className="border border-[#c9a962]/10 bg-[#111110]/60 backdrop-blur-sm p-4">
               <h3 className="text-xs uppercase tracking-[0.2em] text-[#c9a962] mb-2">Problem</h3>
               <p className="text-sm text-[#a8a29e] leading-relaxed">{project.problem}</p>
             </div>
-            <div className="border border-[#1f1f1c] p-4">
+            <div className="border border-[#c9a962]/10 bg-[#111110]/60 backdrop-blur-sm p-4">
               <h3 className="text-xs uppercase tracking-[0.2em] text-[#c9a962] mb-2">Solution</h3>
               <p className="text-sm text-[#a8a29e] leading-relaxed">{project.solution}</p>
             </div>
           </div>
 
-          <div className="border border-[#1f1f1c] p-4">
+          <div className="border border-[#c9a962]/10 bg-[#111110]/60 backdrop-blur-sm p-4">
             <h3 className="text-xs uppercase tracking-[0.2em] text-[#c9a962] mb-3">Tech Stack</h3>
             <div className="flex flex-wrap gap-2">
               {project.techStack.map((tech) => (
@@ -182,7 +182,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
             </div>
           </div>
 
-          <div className="border border-[#1f1f1c] p-4">
+          <div className="border border-[#c9a962]/10 bg-[#111110]/60 backdrop-blur-sm p-4">
             <h3 className="text-xs uppercase tracking-[0.2em] text-[#c9a962] mb-3">Key Highlights</h3>
             <ul className="space-y-2">
               {project.highlights.map((highlight, i) => (
@@ -194,7 +194,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
             </ul>
           </div>
 
-          <div className="border border-[#1f1f1c] p-4">
+          <div className="border border-[#c9a962]/10 bg-[#111110]/60 backdrop-blur-sm p-4">
             <h3 className="text-xs uppercase tracking-[0.2em] text-[#c9a962] mb-2">Impact</h3>
             <p className="text-sm text-[#a8a29e]">{project.impact}</p>
           </div>

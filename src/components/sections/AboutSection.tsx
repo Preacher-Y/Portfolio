@@ -39,12 +39,12 @@ export function AboutSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="space-y-6"
           >
-            <div className="border border-[#1f1f1c] p-6">
+            <div className="border border-[#c9a962]/10 bg-[#111110]/60 backdrop-blur-sm p-6">
               <h3 className="text-xs uppercase tracking-[0.2em] text-[#c9a962] mb-4">My Story</h3>
               <p className="text-[#a8a29e] leading-relaxed">{aboutContent.bio}</p>
             </div>
 
-            <div className="border border-[#1f1f1c] p-6">
+            <div className="border border-[#c9a962]/10 bg-[#111110]/60 backdrop-blur-sm p-6">
               <h3 className="text-xs uppercase tracking-[0.2em] text-[#c9a962] mb-4">Philosophy</h3>
               <p className="text-[#a8a29e] leading-relaxed">{aboutContent.philosophy}</p>
             </div>
@@ -77,7 +77,7 @@ export function AboutSection() {
           {aboutContent.strengths.map((strength, index) => (
             <div
               key={strength.title}
-              className="border border-[#1f1f1c] p-5 hover:border-[#c9a962]/30 transition-colors"
+              className="border border-[#c9a962]/10 bg-[#111110]/60 backdrop-blur-sm p-5 hover:border-[#c9a962]/30 transition-all duration-300"
             >
               <div className="w-6 h-px bg-[#c9a962] mb-4" />
               <h4 className="text-[#faf9f7] font-light mb-2" style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}>

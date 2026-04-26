@@ -37,7 +37,7 @@ export function EducationSection() {
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="luxury-border p-8"
+            className="luxury-border bg-[#111110]/60 backdrop-blur-sm p-8"
           >
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-12 border border-[#c9a962]/30 flex items-center justify-center">
@@ -53,10 +53,10 @@ export function EducationSection() {
             </div>
 
             <div className="flex items-center gap-3 mb-6">
-              <span className="px-3 py-1 text-xs text-[#78716c] border border-[#1f1f1c]">
+              <span className="px-3 py-1 text-xs text-[#78716c] border border-[#c9a962]/10 bg-[#111110]/40 backdrop-blur-sm">
                 {education.period}
               </span>
-              <span className="px-3 py-1 text-xs text-[#78716c] border border-[#1f1f1c]">
+              <span className="px-3 py-1 text-xs text-[#78716c] border border-[#c9a962]/10 bg-[#111110]/40 backdrop-blur-sm">
                 {education.focus}
               </span>
             </div>
@@ -65,7 +65,7 @@ export function EducationSection() {
               <h4 className="text-xs uppercase tracking-[0.2em] text-[#78716c]">Key Areas</h4>
               <div className="flex flex-wrap gap-2">
                 {education.details.map((detail, i) => (
-                  <span key={i} className="px-3 py-1.5 text-sm text-[#a8a29e] border border-[#1f1f1c]">
+                  <span key={i} className="px-3 py-1.5 text-sm text-[#a8a29e] border border-[#c9a962]/10 bg-[#111110]/40 backdrop-blur-sm">
                     {detail}
                   </span>
                 ))}
@@ -87,7 +87,7 @@ export function EducationSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                className="luxury-border p-6"
+                className="luxury-border bg-[#111110]/60 backdrop-blur-sm p-6"
               >
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 border border-[#c9a962]/30 flex items-center justify-center flex-shrink-0">
@@ -101,7 +101,7 @@ export function EducationSection() {
                     <p className="text-sm text-[#78716c] mb-3">{cert.focus}</p>
                     <div className="flex flex-wrap gap-2">
                       {cert.skills.map((skill, i) => (
-                        <span key={i} className="px-2 py-1 text-xs text-[#78716c] border border-[#1f1f1c]">
+                        <span key={i} className="px-2 py-1 text-xs text-[#78716c] border border-[#c9a962]/10 bg-[#111110]/40 backdrop-blur-sm">
                           {skill}
                         </span>
                       ))}

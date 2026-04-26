@@ -15,7 +15,7 @@ function SkillCard({ category, index }: { category: typeof skillCategories[0]; i
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="border border-[#1f1f1c] p-5 hover:border-[#c9a962]/30 transition-colors"
+      className="border border-[#c9a962]/10 bg-[#111110]/60 backdrop-blur-sm p-5 hover:border-[#c9a962]/30 hover:bg-[#111110]/80 transition-all duration-300"
     >
       <div className="flex items-center gap-3 mb-4">
         <div className="w-1.5 h-1.5 rounded-full bg-[#c9a962]" />
@@ -89,7 +89,7 @@ export function SkillsSection() {
           transition={{ delay: 0.5, duration: 0.6 }}
           className="mt-16 text-center"
         >
-          <div className="inline-flex items-center gap-6 px-8 py-4 border border-[#1f1f1c]">
+          <div className="inline-flex items-center gap-6 px-8 py-4 border border-[#c9a962]/10 bg-[#111110]/60 backdrop-blur-sm">
             <span className="text-[#78716c] text-sm">Always learning</span>
             <div className="w-px h-4 bg-[#1f1f1c]" />
             <span className="text-[#a8a29e] text-sm">Exploring AI/ML integration</span>
